@@ -15,6 +15,14 @@
   <%= @post.content %>
 </p>
 
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@post) %>
+  <%#= @post.tags.map { |t| t.name }.join(", ") %>
+</p>
+
+<%#= link_to 'New Tag', new_tag_path %>
+
 <h2>Comments</h2>
 <%= render @post.comments %>
 <!--
@@ -51,5 +59,5 @@
 
 <br />
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit Post', edit_post_path(@post) %> |
+<%= link_to 'Back to Posts', posts_path %>
